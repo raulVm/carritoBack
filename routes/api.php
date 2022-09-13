@@ -21,6 +21,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //PRODUCTOS
 Route::get('/producto', 'ProductoController@show');
 
+//COMPRA
+Route::post('/saveCompra', 'ProductoController@save');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
