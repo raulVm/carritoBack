@@ -15,7 +15,7 @@ class CreateCompraTable extends Migration
     {
         Schema::create('compra', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('idProducto');
+            $table->string('idProducto');
             $table->integer('total');
             $table->integer('cantidad');
             $table->bigInteger('idUsuario');

@@ -20,10 +20,9 @@ class ProductoController extends Controller
         $producto = DB::table('compra')->insert([
             'idProducto' => $request->idProducto,
             'total' => $request->total,
-            'cantidad' => $request->total,
+            'cantidad' => $request->cantidad,
             'idUsuario' => $request->idUsuario,
           ]);
-        // dd($producto);  
         return response()->json("Compra realizada exitosamente", 200);
     }
 }

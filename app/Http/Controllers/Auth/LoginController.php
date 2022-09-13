@@ -55,9 +55,10 @@ class LoginController extends Controller
      
         if( auth()->attempt($credentials) ){
           $user = Auth::user();
-        //   dd($user->name);
             $success['token'] =  $user->createToken('AppName')->accessToken;
             $success['name'] =  $user->name;
+            $success['id'] = $user->id;
+            $success['email'] = $user->email;
                 return response()->json(['success' => $success], 200);
                 } else {
             return response()->json(['error'=>'Sin autorización'], 401);
